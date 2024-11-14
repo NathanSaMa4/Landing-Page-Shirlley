@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Schirlley Ramos</title>
+    <!-- Link do Font Awesome para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link para a fonte Dancing Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F4DADB; /* Rosa claro da paleta */
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Menu de Navegação */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #A0445D; /* Rosa escuro da paleta */
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav div {
+            font-family: 'Dancing Script', cursive; /* Aplicando Dancing Script */
+            color: #F4DADB; /* Cor clara */
+            font-size: 1.8em;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style-type: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #F4DADB; /* Cor clara para contraste */
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #EAA59F; /* Tom pêssego da paleta */
+        }
+
+        /* Seção Principal com Foto no Canto Direito */
+        .hero {
+            background-color: #F4DADB;
+            padding: 50px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Dancing Script', cursive; /* Aplicando Dancing Script */
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #6F233F; /* Bordô escuro da paleta */
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        /* Foto Pessoal no Canto Direito */
+        .hero-photo {
+            max-width: 300px;
+            flex-shrink: 0;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Botões de Redes Sociais Circulares */
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-buttons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: #CB5C64; /* Rosa avermelhado da paleta */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50%;
+            font-size: 1.5em;
+            transition: background-color 0.3s;
+        }
+
+        .social-buttons a:hover {
+            background-color: #A0445D; /* Rosa escuro da paleta */
+        }
+
+        /* Sobre */
+        .about {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-family: 'Dancing Script', cursive; /* Aplicando Dancing Script */
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #6F233F; /* Bordô escuro da paleta */
+        }
+
+        .about p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        /* Portfólio */
+        .portfolio {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .portfolio h2 {
+            font-family: 'Dancing Script', cursive; /* Aplicando Dancing Script */
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #6F233F; /* Bordô escuro da paleta */
+        }
+
+        .portfolio-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .portfolio-images img {
+            width: calc(33.33% - 20px);
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contato */
+        .contact {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: 'Dancing Script', cursive; /* Aplicando Dancing Script */
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #6F233F; /* Bordô escuro da paleta */
+        }
+
+        .contact p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Formulário de Contato */
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contact button {
+            padding: 10px;
+            background-color: #A0445D; /* Rosa escuro da paleta */
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact button:hover {
+            background-color: #6F233F; /* Bordô escuro */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #6F233F; /* Bordô escuro da paleta */
+            color: #F4DADB; /* Rosa claro */
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu de Navegação -->
+    <nav>
+        <div>Schirlley Ramos</div>
+        <ul>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Seção Principal com Foto no Canto Direito -->
+        <div class="hero" id="hero">
+            <div class="hero-text">
+                <h1>Schirlley Ramos</h1>
+                <p>Designer estético especializado em [descrição do serviço, como sobrancelhas, maquiagem, etc.].</p>
+                <p>Transformo sua beleza realçando o que há de melhor em você.</p>
+                <div class="social-buttons">
+                    <a href="https://wa.me/5599999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/seu_usuario" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/seu_usuario" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="hero-photo">
+                <img src="foto.png" alt="Foto de Shirlley">
+            </div>
+        </div>
+
+        <!-- Sobre -->
+        <section id="about" class="about">
+            <h2>Sobre Mim</h2>
+            <p>Sou Schirlley Ramos, profissional com experiência em design estético, incluindo serviços como maquiagem, design de sobrancelhas e consultoria de imagem. Meu objetivo é ajudar cada cliente a destacar sua beleza única.</p>
+        </section>
+
+        <!-- Portfólio -->
+        <section id="portfolio" class="portfolio">
+            <h2>Portfólio</h2>
+            <p>Confira alguns dos meus trabalhos:</p>
+            <div class="portfolio-images">
+                <img src="https://sdbelavista.com.br/wp-content/uploads/2023/05/design-sobrancelhas-antes-depois-3-1024x1024.jpeg" alt="Trabalho de exemplo 1">
+                <img src="https://sdbelavista.com.br/wp-content/uploads/2023/05/design-sobrancelhas-antes-depois-2.jpeg" alt="Trabalho de exemplo 2">
+                <img src="https://sdbelavista.com.br/wp-content/uploads/2023/02/design-sobrancelhas-antes-depois-masculina-03-1024x903.jpeg" alt="Trabalho de exemplo 3">
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contact" class="contact">
+            <h2>Contato</h2>
+            <p>Gostaria de agendar uma consulta ou tem alguma dúvida? Preencha o formulário abaixo:</p>
+            <form action="#" method="POST">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu Email" required>
+                <input type="tel" name="telefone" placeholder="Seu Telefone" required pattern="\(\d{2}\) \d{5}-\d{4}">
+                <textarea name="mensagem" rows="4" placeholder="Sua Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Natanael. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
