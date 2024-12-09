@@ -2,12 +2,14 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Schirlley Ramos é uma profissional de estética, especializada em design de sobrancelhas, maquiagem e consultoria de imagem.">
+    <meta name="keywords" content="Schirlley Ramos, designer de sobrancelhas, maquiagem, estética, consultoria de imagem">
     <title>Portfólio de Schirlley Ramos</title>
     <!-- Link do Font Awesome para os ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Link para a fonte Dancing Script -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" >
     <style>
         /* Reset básico */
         * {
@@ -17,13 +19,15 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #F4DADB; /* Rosa claro da paleta */
+            font-family: Roboto, Arial, sans-serif;
+            font-weight: 600;
+            background-color: #f3e8e8;
+            /*#F4DADB Rosa claro da paleta */
             color: #333;
         }
 
         .container {
-            max-width: 1200px;
+            width: auto;
             margin: 0 auto;
             padding: 20px;
         }
@@ -33,7 +37,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #A0445D; /* Rosa escuro da paleta */
+            background-color: #A94D6D;
+            /* background-color: #A0445D; Rosa escuro da paleta */
             padding: 20px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: sticky;
@@ -55,7 +60,7 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #F4DADB; /* Cor clara para contraste */
+            color: #FFF; /*Cor clara para contraste */
             font-weight: bold;
             transition: color 0.3s;
         }
@@ -67,11 +72,13 @@
         /* Seção Principal com Foto no Canto Direito */
         .hero {
             background-color: #F4DADB;
-            padding: 50px 0;
+            padding: 50px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             text-align: left;
+            border-radius: 1%;
+            margin-top: -20px;
         }
 
         .hero-text {
@@ -84,7 +91,7 @@
             font-size: 3em;
             margin-bottom: 10px;
             font-weight: bold;
-            color: #6F233F; /* Bordô escuro da paleta */
+            color: #9B2541; /* Bordô escuro da paleta */
         }
 
         .hero p {
@@ -122,29 +129,65 @@
             text-decoration: none;
             border-radius: 50%;
             font-size: 1.5em;
-            transition: background-color 0.3s;
+            transition: transform 0.3s ease-in-out, background-color 0.3s;
         }
 
         .social-buttons a:hover {
-            background-color: #A0445D; /* Rosa escuro da paleta */
+            transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+            background-color: #9B2541; /* Cor mais clara no hover */
         }
 
         /* Sobre */
         .about {
-            padding: 40px 0;
-            text-align: center;
+            margin-top: 4%;
+            background-color: #fff8f8;
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative; /* Para garantir que a imagem de fundo fique corretamente posicionada */
+            overflow: hidden; /* Para garantir que a borda não ultrapasse a área */
+            height: 350px;
         }
-
         .about h2 {
-            font-family: 'Dancing Script', cursive; /* Aplicando Dancing Script */
-            font-size: 2em;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
             margin-bottom: 20px;
-            color: #6F233F; /* Bordô escuro da paleta */
+            color: #6F233F;
+            position: relative;
+            z-index: 2;
+            text-align: center;
         }
 
         .about p {
             font-size: 1.2em;
             color: #666;
+            text-align: center;
+            padding-top: 15px;
+        }
+
+        .about::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('about.jpg'); /* Substitua pelo caminho da sua imagem */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15; /* Deixe a imagem bem sutil */
+            z-index: 1;
+        }
+
+        .about img {
+            transition: transform 0.3s ease-in-out;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .about img:hover {
+            transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
         }
 
         /* Portfólio */
@@ -153,9 +196,14 @@
             text-align: center;
         }
 
+        .portfolio p {
+            font-size: 1.4em;
+            padding-bottom: 16px;
+        }
+
         .portfolio h2 {
             font-family: 'Dancing Script', cursive; /* Aplicando Dancing Script */
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 20px;
             color: #6F233F; /* Bordô escuro da paleta */
         }
@@ -168,11 +216,16 @@
         }
 
         .portfolio-images img {
-            width: calc(33.33% - 20px);
+            width: 100%;
             max-width: 300px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: auto; /* Mantém a proporção da imagem */
+            border-radius: 8px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out
+        }
+
+        .portfolio-images img:hover {
+            transform: scale(1.05);
         }
 
         /* Contato */
@@ -183,7 +236,7 @@
 
         .contact h2 {
             font-family: 'Dancing Script', cursive; /* Aplicando Dancing Script */
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 20px;
             color: #6F233F; /* Bordô escuro da paleta */
         }
@@ -204,11 +257,17 @@
         }
 
         .contact input, .contact textarea {
+            transition: border-color 0.3s ease;
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1em;
+        }
+
+        .contact input:focus, .contact textarea:focus {
+            border-color: #A94D6D; /* Destaque para o campo em foco */
+            outline: none;
         }
 
         .contact button {
@@ -225,15 +284,42 @@
 
         .contact button:hover {
             background-color: #6F233F; /* Bordô escuro */
+            transform: translateY(-2px); /* Leve movimento para dar mais interação */
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #6F233F; /* Bordô escuro da paleta */
+            background-color: #5A1F2E; /* Bordô escuro da paleta */
             color: #F4DADB; /* Rosa claro */
             margin-top: 40px;
-        }
+            font-size: 1.em;
+            }
+
+            @media (max-width: 768px) {
+                .hero {
+                    flex-direction: column;
+                    text-align: left;
+                }
+
+                .hero-photo {
+                    max-width: 100%;
+                    margin-top: 20px;
+                }
+
+                .portfolio-images {
+                    display: grid;
+                    justify-items: center;
+                    grid-template-columns: 1fr; /* Apenas uma coluna por vez */
+                    gap: 20px;
+                }
+
+                .portfolio-images img {
+                    width: 100%;
+                    max-width: 350px;
+                }
+            }
+
     </style>
 </head>
 <body>
@@ -256,13 +342,13 @@
                 <p>Designer estético especializado em [descrição do serviço, como sobrancelhas, maquiagem, etc.].</p>
                 <p>Transformo sua beleza realçando o que há de melhor em você.</p>
                 <div class="social-buttons">
-                    <a href="https://wa.me/5599999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/5599999999999" target="_blank" aria-label="Contato no WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     <a href="https://instagram.com/schirlley.esteticanatural" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="https://facebook.com/seu_usuario" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
             <div class="hero-photo">
-                <img src="foto.png" alt="Foto de Shirlley">
+                <img src="foto.png" alt="Foto de Schirlley Ramos, profissional em estética feminina">
             </div>
         </div>
 
@@ -287,20 +373,78 @@
         <section id="contact" class="contact">
             <h2>Contato</h2>
             <p>Gostaria de agendar uma consulta ou tem alguma dúvida? Preencha o formulário abaixo:</p>
-            <form action="#" method="POST">
+            
+            <!-- Formulário de Contato -->
+            <form action="https://getform.io/f/alllwgma" method="POST">
                 <input type="text" name="nome" placeholder="Seu Nome" required>
                 <input type="email" name="email" placeholder="Seu Email" required>
-                <input type="tel" name="telefone" placeholder="Seu Telefone" required pattern="\(\d{2}\) \d{5}-\d{4}">
+                <input type="tel" name="telefone" id="telefone" placeholder="Seu Telefone" required>
                 <textarea name="mensagem" rows="4" placeholder="Sua Mensagem" required></textarea>
                 <button type="submit">Enviar</button>
             </form>
-            
+        
+            <!-- Mensagem de sucesso (inicialmente oculta) -->
+            <div id="mensagem-sucesso" style="display: none; text-align: center; color: #970527; margin-top: 20px;">
+                <p>Obrigado! Sua mensagem foi enviada com sucesso.</p>
+            </div>
+        </section>
+
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 Natanael. Todos os direitos reservados.</p>
+        <p> &copy; 2024 Natanael Sama Alves. Todos os direitos reservados.</p>
     </footer>
 
+ <script>document.getElementById('telefone').addEventListener('input', function (e) {
+    let telefone = e.target.value;
+    
+    // Remove todos os caracteres não numéricos
+    telefone = telefone.replace(/\D/g, '');
+    
+    // Aplica a máscara (XX) XXXXX-XXXX
+    if (telefone.length <= 2) {
+        e.target.value = `(${telefone}`;
+    } else if (telefone.length <= 7) {
+        e.target.value = `(${telefone.slice(0, 2)}) ${telefone.slice(2)}`;
+    } else {
+        e.target.value = `(${telefone.slice(0, 2)}) ${telefone.slice(2, 7)}-${telefone.slice(7, 11)}`;
+    }
+});
+
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();  // Impede o envio normal do formulário
+
+    var form = event.target;
+    var formData = new FormData(form);  // Coleta os dados do formulário
+
+    fetch('https://getform.io/f/alllwgma', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            // Se o envio for bem-sucedido, exibe a mensagem de sucesso
+            const sucessoMensagem = document.querySelector('#mensagem-sucesso');
+            sucessoMensagem.style.display = 'block'; // Exibe a mensagem
+
+            // Após 3 segundos (3000ms), oculta a mensagem
+            setTimeout(function() {
+                sucessoMensagem.style.display = 'none'; // Esconde a mensagem
+            }, 3000); // 3000ms = 3 segundos
+
+            form.reset(); // Limpa o formulário após o envio
+        } else {
+            // Se houver erro no envio
+            alert("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
+        }
+    })
+    .catch(error => {
+        // Se houver erro na requisição AJAX
+        alert("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
+    });
+});
+
+</script>
 </body>
 </html>
